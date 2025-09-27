@@ -552,7 +552,7 @@ function ListServicePage() {
                           }`}>
                             Selected: {daySlots.filter(slot => serviceData.availability?.includes(slot)).length} slots
                           </div>
-                          <div className="grid grid-cols-3 gap-2">
+                          <div className="flex flex-wrap gap-1">
                             {timeSlots.map((time) => {
                               const fullSlot = `${day} ${time}`;
                               const isSelected = serviceData.availability?.includes(fullSlot);
@@ -562,7 +562,7 @@ function ListServicePage() {
                                   whileHover={{ scale: 1.02 }}
                                   whileTap={{ scale: 0.98 }}
                                   onClick={() => handleArrayToggle('availability', fullSlot)}
-                                  className={`px-2 py-1 rounded-lg text-xs font-medium transition-all duration-200 ${
+                                  className={`px-2 py-1 rounded-md text-xs font-medium transition-all duration-200 flex-shrink-0 ${
                                     isSelected
                                       ? 'bg-gradient-to-r from-green-500 to-teal-500 text-white'
                                       : theme === 'dark'
